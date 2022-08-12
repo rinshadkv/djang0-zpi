@@ -80,9 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
        'NAME': 'django_api',
-       'USER': 'postgres',
-       'PASSWORD': 'root',
-       'HOST': 'localhost',
+       'USER': 'ciaclaacrynpxd',
+       'PASSWORD': '009a11503db05e88b078a61e30545cafa0775e3d07c155304cfb99aa50946250',
+       'HOST': 'postgres://ciaclaacrynpxd:009a11503db05e88b078a61e30545cafa0775e3d07c155304cfb99aa50946250@ec2-3-225-110-188.compute-1.amazonaws.com:5432/dd1ic7l5jhdr0o',
        'PORT': '5432',
     }
 }
@@ -128,3 +128,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
